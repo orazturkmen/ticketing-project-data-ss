@@ -8,11 +8,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-//
-//@Controller
-//@RequestMapping("/task")
-//public class TaskController {
-//
+
+@Controller
+@RequestMapping("/task")
+public class TaskController {
+
 //    private final UserService userService;
 //    private final ProjectService projectService;
 //    private final TaskService taskService;
@@ -144,4 +144,4 @@ import javax.validation.Valid;
 //
 //    }
 //
-//}
+}

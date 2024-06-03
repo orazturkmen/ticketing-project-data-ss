@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-//
-//@Controller
-//@RequestMapping("/project")
-//public class ProjectController {
-//
+
+@Controller
+@RequestMapping("/project")
+public class ProjectController {
+
 //    private final UserService userService;
 //    private final ProjectService projectService;
 //
@@ -110,4 +110,4 @@ import java.util.List;
 //        return "redirect:/project/manager/project-status";
 //    }
 //
-//}
+}
