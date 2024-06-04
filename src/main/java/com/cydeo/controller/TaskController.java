@@ -74,17 +74,7 @@ public class TaskController {
         return "/task/update";
 
     }
-//
-////    @PostMapping("/update/{taskId}")
-////    public String updateTask(@PathVariable("taskId") Long taskId, TaskDTO task) {
-////
-////        task.setId(taskId);
-////        taskService.update(task);
-////
-////        return "redirect:/task/create";
-////
-////    }
-//
+
     @PostMapping("/update/{id}")
     public String updateTask(@Valid @ModelAttribute("task") TaskDTO task, BindingResult bindingResult, Model model) {
 
@@ -104,19 +94,19 @@ public class TaskController {
         return "redirect:/task/create";
 
     }
-//
-//    @GetMapping("/employee/pending-tasks")
-//    public String employeePendingTasks(Model model) {
-//        model.addAttribute("tasks", taskService.findAllTasksByStatusIsNot(Status.COMPLETE));
-//        return "/task/pending-tasks";
-//    }
-//
-//    @GetMapping("/employee/archive")
-//    public String employeeArchivedTasks(Model model) {
-//        model.addAttribute("tasks", taskService.findAllTasksByStatus(Status.COMPLETE));
-//        return "/task/archive";
-//    }
-//
+
+    @GetMapping("/employee/pending-tasks")
+    public String employeePendingTasks(Model model) {
+        model.addAttribute("tasks", taskService.listAllTasksByStatusIsNot(Status.COMPLETE));
+        return "/task/pending-tasks";
+    }
+
+    @GetMapping("/employee/archive")
+    public String employeeArchivedTasks(Model model) {
+        model.addAttribute("tasks", taskService.listAllTasksByStatus(Status.COMPLETE));
+        return "/task/archive";
+    }
+
 //    @GetMapping("/employee/edit/{id}")
 //    public String employeeEditTask(@PathVariable Long id, Model model) {
 //
